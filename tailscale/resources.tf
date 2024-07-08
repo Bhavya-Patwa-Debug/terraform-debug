@@ -1,3 +1,7 @@
+data "tailscale_acl" "remote_acl" {
+  
+}
+
 resource "tailscale_acl" "as_json" {
   acl = jsonencode({
     acls : [
