@@ -18,3 +18,5 @@ terraform {
 
 provider "tailscale" {
 }
+resource "tailscale_acl" "default" {
+}
