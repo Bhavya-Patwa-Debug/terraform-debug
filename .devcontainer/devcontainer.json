@@ -1,0 +1,44 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.238.1/containers/python-3
+{
+    // TODO later: create a dbt-only container
+    // -> less vscode plugins, less python packages, less devcontainer features,
+    //    less Trunk linters, hide some directories from VSCode. etc.
+    "name": "Python 3",
+    "build": {
+      "dockerfile": "Dockerfile",
+      "context": ".."
+    },
+  
+    // Minium host requirements
+    "hostRequirements": { "memory": "16gb", "cpus": 4 },
+  
+    // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "vscode",
+    // As a part of using Tailscale feature
+
+  
+    // Configure tool-specific properties.
+    "customizations": {
+      // Configure properties specific to VS Code.
+      "vscode": {
+        // Set *defaultcontainer specific settings.json values on container create.
+        "settings": {
+          ////"python.defaultInterpreterPath": "/usr/local/bin/python"
+        },
+        // Add the IDs of extensions you want installed when the container is created.
+        "extensions": [
+          // ************* GENERAL **************
+          // Python: IntelliSense (Pylance), Linting, Debugging (multi-threaded, remote), Jupyter Notebooks, code formatting, refactoring, unit tests, and more.
+          // https://marketplace.visualstudio.com/items?itemName=ms-python.python
+          // ! Make sure not to install the extension locally, as it will conflict with the extension installed in the container.
+          "ms-python.python",
+          // ************* GIT **************
+          // GitHub Pull Requests and Issues: Pull Request and Issue Provider for GitHub
+          // https://open-vsx.org/extension/GitHub/vscode-pull-request-github
+          "GitHub.vscode-pull-request-github"
+        ]
+      }
+    }
+  }
+  
